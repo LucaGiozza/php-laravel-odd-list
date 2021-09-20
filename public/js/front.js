@@ -1945,8 +1945,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Header"
+  name: "Header",
+  data: function data() {
+    return {
+      menuBoolpress: [{
+        label: 'Home',
+        routeName: 'home'
+      }, {
+        label: 'Chi siamo',
+        routeName: 'about'
+      }, {
+        label: 'Contatti',
+        routeName: 'contact'
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -37753,62 +37773,58 @@ var render = function() {
       "nav",
       { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
       [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
-            _vm._v("Boolpress")
-          ]),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarNav" }
-            },
-            [
-              _c("ul", { staticClass: "navbar-nav" }, [
+        _c(
+          "div",
+          { staticClass: "container-fluid" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
+              [_vm._v("\n              Boolpress\n          ")]
+            ),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "collapse navbar-collapse",
+                attrs: { id: "navbarNav" }
+              },
+              [
                 _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link active",
-                        attrs: { to: { name: "home" } }
-                      },
-                      [_vm._v("\n\n                    Home\n                ")]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { to: { name: "about" } }
-                      },
+                  "ul",
+                  { staticClass: "navbar-nav" },
+                  _vm._l(_vm.menuBoolpress, function(link, index) {
+                    return _c(
+                      "li",
+                      { key: index, staticClass: "nav-item" },
                       [
-                        _vm._v(
-                          "\n                    Chi siamo\n\n                "
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link active",
+                            attrs: { to: { name: link.routeName } }
+                          },
+                          [
+                            _vm._v(
+                              "\n\n                   " +
+                                _vm._s(link.label) +
+                                "\n                "
+                            )
+                          ]
                         )
-                      ]
+                      ],
+                      1
                     )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(1)
-              ])
-            ]
-          )
-        ])
+                  }),
+                  0
+                )
+              ]
+            )
+          ],
+          1
+        )
       ]
     )
   ])
@@ -37833,16 +37849,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _vm._v("Contatti")
-      ])
-    ])
   }
 ]
 render._withStripped = true
