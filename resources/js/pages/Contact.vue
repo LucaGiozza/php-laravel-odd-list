@@ -2,15 +2,19 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>HomePage</h1>
+            <h2>Contatti</h2>
         </div>
     </div>
+
 </div>
     
 </template>
 
 <script>
 export default {
-    name: "Home"
+   name: "Contact"
 }
 </script>
+<style lang="scss" scoped>
+
+</style>

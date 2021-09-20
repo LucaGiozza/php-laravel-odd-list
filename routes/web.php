@@ -25,3 +25,6 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::resource('/posts', 'PostController');
 });
 
+
+Route::get('/{any}', 'HomeController@index')->where("any", ".*");
+

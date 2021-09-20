@@ -9,10 +9,20 @@
          <div class="collapse navbar-collapse" id="navbarNav">
            <ul class="navbar-nav">
              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                 <router-link :to="{ name: 'home'}" class="nav-link active">
+
+                     Home
+                 </router-link>
+                
              </li>
              <li class="nav-item">
-               <a class="nav-link" href="#">Chi siamo</a>
+                 <router-link :to="{ name: 'about'}" class="nav-link">
+                     Chi siamo
+
+                 </router-link>
+
+               
              </li>
              <li class="nav-item">
                 <a class="nav-link" href="#">Contatti</a>
