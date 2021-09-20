@@ -17,12 +17,22 @@ class PostController extends Controller
     public function index()
     {
 
-        $posts = Post::all();
-        return response()->json([
-            'success' => true,
-            'results' => $posts
+        //  faccio così se devo prendere tutti i post in un'unica pagina
+        // $posts = Post::all();
+        // return response()->json([
+        //     'success' => true,
+        //     'results' => $posts
 
-        ]);
+        // ]);
+
+        // faccio così invece per fare la paginazione
+
+        $posts = Post::paginate(4);
+        return response()->json([
+                 'success' => true,
+                 'results' => $posts
+    
+             ]);
     }
 
    
